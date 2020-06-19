@@ -1,1 +1,1 @@
-worker: python dbottake2.oy
+worker: python dbottake2.py
