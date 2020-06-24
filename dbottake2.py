@@ -1,14 +1,14 @@
-import discord
-import os
-
-client = discord.Client()
-
-
-@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
-
-
+# import discord
+# import os
+#
+# client = discord.Client()
+#
+#
+# @client.event
+# async def on_ready():
+#     print('We have logged in as {0.user}'.format(client))
+#
+#
 # @client.event
 # async def on_message(message):
 #     if message.author == client.user:
@@ -16,9 +16,9 @@ async def on_ready():
 #
 #     if message.content.startswith('$hello'):
 #         await message.channel.send('Hello!')
-
-@client.event
-async def on_message(message):
-    await message.channel.delete_message(message)
-
-client.run(os.environ['discord_bot'])
+#
+# # @client.event
+# # async def on_message(message):
+# #     await client.delete_message(message)
+#
+# client.run(os.environ['discord_bot'])
