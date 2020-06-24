@@ -16,9 +16,10 @@ async def on_message(message):
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
+        await client.delete_message(message)
 
-@client.event
-async def on_message(message):
-    await client.delete_message(message)
+# @client.event
+# async def on_message(message):
+#
 
 client.run(os.environ['discord_bot'])
