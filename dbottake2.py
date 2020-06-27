@@ -2,8 +2,7 @@ import discord
 import asyncio
 import datetime
 import time
-# import os
-disbot = "NzIzMzI5MzQyMTU5MTkyMTQ1.XuwU8A.NwCu-MSyQcO5cSnBPKbXUhKPKFU"
+import os
 client = discord.Client()
 async def mess_deleter():
     await client.wait_until_ready()
@@ -35,4 +34,4 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 client.loop.create_task(mess_deleter())
-client.run(disbot)
+client.run(os.environ['discord_bot'])
