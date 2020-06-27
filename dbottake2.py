@@ -25,7 +25,7 @@ async def mess_deleter():
                 else:
                     ndtime.append(stime[2][2:4])
                     ndtime.append(stime[2][5:7])
-                if int(ndtime[0]) >= 30:
+                if int(ndtime[0]) >= 1:
                     await discord.Message.delete(messages[i*-1])
         # await asyncio.sleep(3)
 
