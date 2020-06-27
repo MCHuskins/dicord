@@ -8,7 +8,7 @@ client = discord.Client()
 async def mess_deleter():
     await client.wait_until_ready()
     while True:
-        channel = client.get_channel(723329200018292779)
+        channel = client.get_channel(719052086607740939)
         messages = await channel.history(limit=10000).flatten()
         for i in range(len(messages)):
             timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i*-1].id)
@@ -25,7 +25,7 @@ async def mess_deleter():
                 else:
                     ndtime.append(stime[2][2:4])
                     ndtime.append(stime[2][5:7])
-                if int(ndtime[0]) >= 1:
+                if int(ndtime[0]) >= 30:
                     await discord.Message.delete(messages[i*-1])
         # await asyncio.sleep(3)
 
