@@ -30,7 +30,7 @@ async def mess_deleter():
                         # print("why")
             except:
                 pass
-        # await asyncio.sleep(3)
+        await asyncio.sleep(30)
 
 
 @client.event
