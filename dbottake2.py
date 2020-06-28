@@ -14,7 +14,7 @@ async def mess_deleter():
                 ##timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i].id)
                 timeaftere = str(timeaftere)
                 stime = list(timeaftere.split())
-                await channel.send(stime[1][0])
+                ##await channel.send(stime[1][0])
                 if str(stime[1]) == 'day,':
                     ##await channel.send(stime[1]+"test")
                     ndtime = []
