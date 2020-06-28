@@ -6,17 +6,17 @@ client = discord.Client()
 async def mess_deleter():
     await client.wait_until_ready()
     while True:
-        channel = client.get_channel(723329200018292779)
+        channel = client.get_channel(719052086607740939)
         await channel.send(datetime.datetime.utcnow())
         messages = await channel.history(limit=10000).flatten()
         for i in range(len(messages)):
             try:
-                timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i].id)
+                ##timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i].id)
                 timeaftere = str(timeaftere)
                 stime = list(timeaftere.split())
-                await channel.send(stime[1])
-                if str(stime[1]) == 'day, 'or str(stime[1]) = 'days, ':
-                    await channel.send(stime[1]+"test")
+                await channel.send(stime[1][0])
+                if str(stime[1]) == 'day,':
+                    ##await channel.send(stime[1]+"test")
                     ndtime = []
                     ndtime.append(stime[0])
                     ndtime.append(stime[2][0])
@@ -27,7 +27,7 @@ async def mess_deleter():
                     # else:
                     #     ndtime.append(stime[2][2:4])
                     #     ndtime.append(stime[2][5:7])
-                    await channel.send(ndtime[0])
+                    ##await channel.send(ndtime[0])
                     if int(ndtime[0]) >= 1:
                         await discord.Message.delete(messages[i])
                         # print("why")
