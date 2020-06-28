@@ -1,7 +1,6 @@
 import discord
 import asyncio
 import datetime
-import time
 import os
 client = discord.Client()
 async def mess_deleter():
