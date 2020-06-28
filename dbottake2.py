@@ -6,7 +6,7 @@ client = discord.Client()
 async def mess_deleter():
     await client.wait_until_ready()
     while True:
-        channel = client.get_channel(719052086607740939)
+        channel = client.get_channel(723329200018292779)
         messages = await channel.history(limit=10000).flatten()
         for i in range(len(messages)):
             try:
