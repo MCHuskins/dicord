@@ -7,6 +7,7 @@ async def mess_deleter():
     await client.wait_until_ready()
     while True:
         channel = client.get_channel(723329200018292779)
+        await channel.send(datetime.datetime.utcnow())
         messages = await channel.history(limit=10000).flatten()
         for i in range(len(messages)):
             try:
