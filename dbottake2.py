@@ -11,7 +11,7 @@ async def mess_deleter():
         messages = await channel.history(limit=10000).flatten()
         for i in range(len(messages)):
             try:
-                ##timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i].id)
+                timeaftere = datetime.datetime.utcnow()-discord.utils.snowflake_time(messages[i].id)
                 timeaftere = str(timeaftere)
                 stime = list(timeaftere.split())
                 ##await channel.send(stime[1][0])
