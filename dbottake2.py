@@ -15,7 +15,7 @@ async def mess_deleter():
                 timeaftere = str(timeaftere)
                 stime = list(timeaftere.split())
                 await channel.send(stime[1])
-                if str(stime[1]) == 'days,':
+                if str(stime[1]) == 'day,'or str(stime[1]) = 'days,'':
                     await channel.send(stime[1]+"test")
                     ndtime = []
                     ndtime.append(stime[0])
