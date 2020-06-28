@@ -31,6 +31,13 @@ async def mess_deleter():
                 pass
         await asyncio.sleep(30)
 
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith('$hello'):
+        await discord.Message.delete(message)
+        await message.channel.send('Hello!')
 
 @client.event
 async def on_ready():
