@@ -24,7 +24,7 @@ async def mess_deleter():
                         await discord.Message.delete(messages[i*-1])
             except:
                 pass
-        await asyncio.sleep(30)
+        await asyncio.sleep(7200)
 
 @client.event
 async def on_message(message):
