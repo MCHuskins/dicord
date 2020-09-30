@@ -47,13 +47,6 @@ async def on_message(message):
             print('done')
             print(message.channel)
 
-# @client.event
-# async def on_message(message):
-#     if message.author == client.user:
-#         return
-#     if message.content == 'dose this work':
-#         role = get(message.server.roles, name='test')
-#         await client.add_roles(message.author, role)
 
 @client.event
 async def on_ready():
