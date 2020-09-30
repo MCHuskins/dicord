@@ -39,7 +39,7 @@ async def deleme(chan, wtd):
 
 @client.event
 async def on_message(message):
-    if message.author.id == 708149825429831700:
+    if message.author.id not in black_list:
         if message.content.startswith('$del'):
             print(message.channel)
             await discord.Message.delete(message)
