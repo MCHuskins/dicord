@@ -37,15 +37,30 @@ async def deleme(chan, wtd):
             await discord.Message.delete(messages[i*-1])
 
 
+
+helpthing =""" "?del"- will deletes message from you in the channel you sent it in
+"""
 @client.event
 async def on_message(message):
-    if message.author.id not in black_list:
-        if message.content.startswith('$del'):
+    if message.content.startswith('?help'):
+        await discord.Message.delete(message)
+        if message.author.id in black_list:
+            await message.channel.send(f'<@{message.author.id}> try not to be gay')
+            print("lol")
+        else:
+            await message.channel.send(helpthing)
+
+    if message.content.startswith('?del'):
+        if message.author.id in black_list:
+            await message.channel.send(f'<@{message.author.id}> try not to be gay')
+            print("lol")
+        if message.author.id not in black_list:
             print(message.channel)
             await discord.Message.delete(message)
             await deleme(message.channel.id, message.author.id)
             print('done')
             print(message.channel)
+
 
 
 @client.event
@@ -54,3 +69,5 @@ async def on_ready():
 
 client.loop.create_task(mess_deleter())
 client.run(disbottoken)
+
+#708149825429831700
