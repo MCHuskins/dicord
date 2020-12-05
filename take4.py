@@ -4,6 +4,7 @@ import datetime
 disbottoken = 'NzIzMzI5MzQyMTU5MTkyMTQ1.XuwC8Q.GzoL8Oi5XKZMMi-kq0f4k_65tPY'
 client = discord.Client()
 
+w_list = [708149825429831700, 682052746773528595]
 black_list = [692787298856861758, 501114768820535305, 624730049526104133, 679457474599845930, 735971323528085516]
 
 async def mess_deleter():
@@ -34,12 +35,13 @@ async def deleme(chan, wtd):
     messages = await channel.history(limit=10000).flatten()
     for i in range(len(messages)):
         if messages[i*-1].author.id == wtd:
-            await discord.Message.delete(messages[i*-1])
+            if not messages[i*-1].pinned:
+                await discord.Message.delete(messages[i*-1])
+    print("deleted {} in {}".format(wtd,channel))
 
 
+helpthing =""" "?del"- will deletes message from you in the channel you sent it in"""
 
-helpthing =""" "?del"- will deletes message from you in the channel you sent it in
-"""
 @client.event
 async def on_message(message):
     if message.content.startswith('?help'):
@@ -49,17 +51,19 @@ async def on_message(message):
             print("lol")
         else:
             await message.channel.send(helpthing)
-
     if message.content.startswith('?del'):
         if message.author.id in black_list:
             await message.channel.send(f'<@{message.author.id}> try not to be gay')
             print("lol")
         if message.author.id not in black_list:
-            print(message.channel)
             await discord.Message.delete(message)
-            await deleme(message.channel.id, message.author.id)
-            print('done')
-            print(message.channel)
+            id = int(message.author.id)
+            await deleme(message.channel.id, id)
+    if message.content.startswith('?pur <@!'):
+        if message.author.id in w_list:
+            id = int(message.content[9:-1])
+            await discord.Message.delete(message)
+            await deleme(message.channel.id, id)
 
 
 
