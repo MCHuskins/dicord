@@ -1,9 +1,0 @@
-import pandas as pd
-df = pd.read_csv("dis.csv")
-# print(df)
-channelstoclear = []
-black_list = []
-for line in df.channelstoclear:
-    if line.is_integer():
-        channelstoclear.append(int(line))
-print(channelstoclear)
