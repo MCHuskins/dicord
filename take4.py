@@ -1,7 +1,3 @@
-import time
-
-time.sleep(300)
-
 import discord
 import asyncio
 import datetime
