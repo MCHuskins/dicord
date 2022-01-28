@@ -2,7 +2,7 @@ import discord
 import asyncio
 import datetime
 import pandas as pd
-disbottoken = 'NzIzMzI5MzQyMTU5MTkyMTQ1.XuwC8Q.GzoL8Oi5XKZMMi-kq0f4k_65tPY'
+disbottoken = 'stop putting api token on git'
 client = discord.Client()
 
 #adding the black_list and channelstoclear
@@ -117,5 +117,3 @@ async def on_ready():
 
 client.loop.create_task(mess_deleter())
 client.run(disbottoken)
-
-#708149825429831700
